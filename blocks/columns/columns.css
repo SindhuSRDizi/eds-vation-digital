@@ -4,7 +4,7 @@
 }
 
 .columns img {
-  width: 100%;
+  /* width: 100%;   Need to fix this through specific css, for time being I am commenting this*/
 }
 
 .columns > div > div {

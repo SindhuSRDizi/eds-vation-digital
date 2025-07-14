@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Adobe. All rights reserved.
+ * Copyright 2024 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License. You may obtain a copy
  * of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -16,15 +16,11 @@ function sampleRUM(checkpoint, data) {
   const timeShift = () => (window.performance ? window.performance.now() : Date.now() - window.hlx.rum.firstReadTime);
   try {
     window.hlx = window.hlx || {};
+    sampleRUM.enhance = () => {};
     if (!window.hlx.rum) {
-      sampleRUM.enhance = () => {};
-      const param = new URLSearchParams(window.location.search).get('rum');
-      const weight = (param === 'on' && 1)
-        || (window.SAMPLE_PAGEVIEWS_AT_RATE === 'high' && 10)
-        || (window.SAMPLE_PAGEVIEWS_AT_RATE === 'low' && 1000)
-        || 100;
+      const weight = new URLSearchParams(window.location.search).get('rum') === 'on' ? 1 : 100;
       const id = Math.random().toString(36).slice(-4);
-      const isSelected = param !== 'off' && Math.random() * weight < 1;
+      const isSelected = Math.random() * weight < 1;
       // eslint-disable-next-line object-curly-newline, max-len
       window.hlx.rum = {
         weight,
@@ -81,13 +77,7 @@ function sampleRUM(checkpoint, data) {
             t: time,
             ...pingData,
           });
-          const urlParams = window.RUM_PARAMS
-            ? `?${new URLSearchParams(window.RUM_PARAMS).toString()}`
-            : '';
-          const { href: url, origin } = new URL(
-            `.rum/${weight}${urlParams}`,
-            sampleRUM.collectBaseURL,
-          );
+          const { href: url, origin } = new URL(`.rum/${weight}`, sampleRUM.collectBaseURL);
           const body = origin === window.location.origin
             ? new Blob([rumData], { type: 'application/json' })
             : rumData;
@@ -98,16 +88,9 @@ function sampleRUM(checkpoint, data) {
         sampleRUM.sendPing('top', timeShift());
 
         sampleRUM.enhance = () => {
-          // only enhance once
-          if (document.querySelector('script[src*="rum-enhancer"]')) return;
-          const { enhancerVersion, enhancerHash } = sampleRUM.enhancerContext || {};
           const script = document.createElement('script');
-          if (enhancerHash) {
-            script.integrity = enhancerHash;
-            script.setAttribute('crossorigin', 'anonymous');
-          }
           script.src = new URL(
-            `.rum/@adobe/helix-rum-enhancer@${enhancerVersion || '^2'}/src/index.js`,
+            '.rum/@adobe/helix-rum-enhancer@^2/src/index.js',
             sampleRUM.baseURL,
           ).href;
           document.head.appendChild(script);
@@ -122,7 +105,7 @@ function sampleRUM(checkpoint, data) {
     }
     document.dispatchEvent(new CustomEvent('rum', { detail: { checkpoint, data } }));
   } catch (error) {
-    // something went awry
+    // something went wrong
   }
 }
 
@@ -148,12 +131,11 @@ function setup() {
 }
 
 /**
- * Auto initialization.
+ * Auto initializiation.
  */
 
 function init() {
   setup();
-  sampleRUM.collectBaseURL = window.origin;
   sampleRUM();
 }
 
@@ -440,8 +422,6 @@ function decorateIcon(span, prefix = '', alt = '') {
   img.src = `${window.hlx.codeBasePath}${prefix}/icons/${iconName}.svg`;
   img.alt = alt;
   img.loading = 'lazy';
-  img.width = 16;
-  img.height = 16;
   span.append(img);
 }
 
@@ -451,7 +431,7 @@ function decorateIcon(span, prefix = '', alt = '') {
  * @param {string} [prefix] prefix to be added to icon the src
  */
 function decorateIcons(element, prefix = '') {
-  const icons = element.querySelectorAll('span.icon');
+  const icons = [...element.querySelectorAll('span.icon')];
   icons.forEach((span) => {
     decorateIcon(span, prefix);
   });
@@ -497,6 +477,43 @@ function decorateSections(main) {
       sectionMeta.parentNode.remove();
     }
   });
+}
+
+/**
+ * Gets placeholders object.
+ * @param {string} [prefix] Location of placeholders
+ * @returns {object} Window placeholders object
+ */
+// eslint-disable-next-line import/prefer-default-export
+async function fetchPlaceholders(prefix = 'default') {
+  window.placeholders = window.placeholders || {};
+  if (!window.placeholders[prefix]) {
+    window.placeholders[prefix] = new Promise((resolve) => {
+      fetch(`${prefix === 'default' ? '' : prefix}/placeholders.json`)
+        .then((resp) => {
+          if (resp.ok) {
+            return resp.json();
+          }
+          return {};
+        })
+        .then((json) => {
+          const placeholders = {};
+          json.data
+            .filter((placeholder) => placeholder.Key)
+            .forEach((placeholder) => {
+              placeholders[toCamelCase(placeholder.Key)] = placeholder.Text;
+            });
+          window.placeholders[prefix] = placeholders;
+          resolve(window.placeholders[prefix]);
+        })
+        .catch(() => {
+          // error loading placeholders
+          window.placeholders[prefix] = {};
+          resolve(window.placeholders[prefix]);
+        });
+    });
+  }
+  return window.placeholders[`${prefix}`];
 }
 
 /**
@@ -664,9 +681,6 @@ async function loadSections(element) {
   for (let i = 0; i < sections.length; i += 1) {
     // eslint-disable-next-line no-await-in-loop
     await loadSection(sections[i]);
-    if (i === 0 && sampleRUM.enhance) {
-      sampleRUM.enhance();
-    }
   }
 }
 
@@ -681,6 +695,7 @@ export {
   decorateIcons,
   decorateSections,
   decorateTemplateAndTheme,
+  fetchPlaceholders,
   getMetadata,
   loadBlock,
   loadCSS,
