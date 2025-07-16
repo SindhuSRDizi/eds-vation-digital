@@ -39,7 +39,7 @@
 
   /* heading sizes */
   --heading-font-size-xxl: 40px;
-  --heading-font-size-xl: 36px;
+  --heading-font-size-xl: 32px;
   --heading-font-size-l: 24px;
   --heading-font-size-m: 16px;
   --heading-font-size-s: 14px;
@@ -75,7 +75,7 @@
 
     /* heading sizes */
     --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
+    --heading-font-size-xl: 32px;
     --heading-font-size-l: 24px;
     --heading-font-size-m: 22px;
     --heading-font-size-s: 14px;
@@ -132,17 +132,18 @@ h1 {
 h2 {
   font-family: var(--font-family-serif, "Asar", Georgia, "Times New Roman", Times, serif);
   font-size: var(--heading-font-size-xl);
-  margin-bottom: 13.5px;
-    margin-top: 27px;
+  margin-bottom: 22px;
+  margin-top: 49px;
+  margin-left: 66px;
 }
 
-h2::after {
+/* h2::after {
   border-bottom: 2px solid var(--brand-primary, #ffea00);
   content: "";
   display: block;
   padding-top: 8px;
   width: 84px;
-}
+} */
 
 h3 {
   font-size: var(--heading-font-size-l);
@@ -158,14 +159,18 @@ h5 {
   font-size: var(--heading-font-size-s);
   font-family: var(--font-family-sansserif, "Source Sans Pro", "Helvetica Neue", helvetica, arial, sans-serif);
   font-weight: var(--font-weight-bold, 600);
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 h6 {
   font-size: var(--heading-font-size-xs);
 }
 
-p,
+p {
+  margin-bottom: 41px;
+  margin-left: 66px;
+}
+
 dl,
 ol,
 ul,
@@ -280,21 +285,21 @@ main>.section {
   margin: 40px 0;
 }
 
-main>.section>div {
+/* main>.section>div {
   max-width: 1200px;
   margin: auto;
   padding: 0 24px;
-}
+} */
 
 main>.section:first-of-type {
   margin-top: 0;
-  padding-top: 200px;
+  padding-top: 164px;
 }
 
 @media (width >=900px) {
-  main>.section>div {
+  /* main>.section>div {
     padding: 0 32px;
-  }
+  } */
 }
 
 /* section metadata */

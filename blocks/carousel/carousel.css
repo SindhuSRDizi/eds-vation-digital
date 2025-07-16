@@ -60,13 +60,42 @@
 }
 
 .carousel .carousel-slide .carousel-slide-content {
-  z-index: 1;
-  margin: 184px auto 0;
-  padding: 16px;
+  position: absolute;
+  bottom: 23%;           /* aligned to bottom */
+  z-index: 2;
   color: white;
-  background-color: rgba(19 19 19 / 75%);
+  margin: 0;             /* remove margin that pushes content down */
+  transform: none;
+  max-width: 40%; /* instead of 90% */
+  pointer-events: auto; /* default */
+  left: 0; /* Start from left edge */
+  padding-left: 80px; /* Leave space for arrow */
+  max-width: 450px;
+}
+
+/* .carousel .carousel-slide .carousel-slide-content .banner-title{
+  margin-bottom: 20px;
   position: relative;
-  width: var(--slide-content-width, auto);
+  top: -60px;
+  left: -82px;
+  z-index: 3;
+  background-color: #921CE8;
+  color: white;
+  padding: 5px;
+  font-size: 30px;
+  font-weight: bold;
+  display: inline-block;
+  border-bottom-right-radius: 20px;
+} */
+
+.carousel-slide-content h2 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.carousel-slide-content p {
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
 .carousel .carousel-slide-indicators {
@@ -96,10 +125,10 @@
   background-color: var(--text-color);
 }
 
-.carousel .carousel-navigation-buttons {
+/* .carousel .carousel-navigation-buttons {
   position: absolute;
-  top: 100%;
-  transform: translateY(0%);
+  top: 50%;
+  transform: translateY(-50%);
   left: 12px;
   right: 12px;
   display: flex;
@@ -107,18 +136,32 @@
   justify-content: flex-end;
   z-index: 1;
   margin-top: 10px;
-}
+} */
 
 /* stylelint-disable-next-line no-descending-specificity */
 .carousel .carousel-navigation-buttons button {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   width: 44px;
   height: 44px;
-  margin: 0;
   border-radius: 50%;
   padding: 0;
-  background-color: transparent;
-  transition: background-color 0.2s;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* Left button */
+.carousel .slide-prev {
+  left: 12px;
+}
+
+/* Right button */
+.carousel .slide-next {
+  right: 12px;
 }
 
 .carousel .carousel-navigation-buttons button:hover,
@@ -128,19 +171,17 @@
 
 .carousel .carousel-navigation-buttons button::after {
   display: block;
-  content: '\1F862';
-  height: 24px;
-  width: 24px;
+  content: '\1F862'; /* ← Left arrow */
+  font-size: 24px;
   position: absolute;
   top: 50%;
-  left: calc(50% + 2px);
-  transform: translate(-50%, -35%) rotate(-180deg);
-  font-size: 24px;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-180deg);
 }
 
 .carousel .carousel-navigation-buttons button.slide-next::after {
-  transform: translate(-50%, -50%) rotate(0);
-  left: calc(50% - 2px);
+  content: '\1F862'; /* → Right arrow using same char rotated */
+  transform: translate(-50%, -50%) rotate(0deg);
 }
 
 @media (width >= 600px) {

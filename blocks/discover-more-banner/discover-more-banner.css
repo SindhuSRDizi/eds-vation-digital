@@ -1,0 +1,34 @@
+
+.discover-more-banner > div {
+    position: relative;
+    display: inline-block;
+}
+
+.discover-more-banner picture img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.discover-more-banner .button-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    text-align: center;
+}
+
+.discover-more-banner .button-container .button {
+    border:1px solid #9a21cb;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 18px;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+    text-transform: none;
+}

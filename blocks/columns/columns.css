@@ -1,6 +1,21 @@
+.columns h2 {
+  margin-bottom: 13.5px;
+  margin-top: 27px;
+  margin-left: 0;
+}
+
+.columns p {
+  margin-top: 0.8em;
+  margin-bottom: 0.25em;
+  margin-left: 0;
+}
+
 .columns > div {
   display: flex;
   flex-direction: column;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
 }
 
 .columns img {
@@ -30,4 +45,5 @@
     flex: 1;
     order: unset;
   }
+
 }

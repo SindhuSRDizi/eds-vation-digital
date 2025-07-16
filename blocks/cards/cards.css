@@ -1,49 +1,74 @@
-.cards > ul {
+.cards.white-bg .cards-light-theme {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.cards.white-bg .cards-light-theme {
   list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  grid-gap: 24px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 0; /* 🔧 Fix */
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 
-.cards > ul > li {
+.cards.white-bg .cards-light-theme li {
   background-color: var(--background-color);
+  border-color: #363636;
+  /* flex: 0 0 32%;; */
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 345px;
+  height: 243px;
 }
 
-.cards .cards-card-body {
+.cards.white-bg .cards-light-theme li:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* stronger shadow on hover */
+}
+
+.cards.white-bg .cards-light-theme .cards-card-body {
   margin: 16px 16px 16px 0;
 }
 
-.cards .cards-card-body .card-paragraph{
+.cards.white-bg .cards-light-theme .cards-card-body h5 {
+  color: #0e1012;
+  font-size: 26px;
+}
+
+.cards.white-bg .cards-light-theme .cards-card-body .card-paragraph{
   color: dimgray;
   display: block;
   font-size: var(--font-size-small, 14px);
   margin-top: 5px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-transform: uppercase;
-  white-space: nowrap;
+  /* overflow: hidden; */
   width: 260px;
 }
 
-.cards .cards-card-image {
+.cards.white-bg .cards-light-theme .cards-card-body p {
+  margin-left: 0;
+}
+
+.cards.white-bg .cards-light-theme .cards-card-image {
   line-height: 0;
 }
 
-.cards > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.cards.white-bg .cards-light-theme li img {
+  width: 191px;
+  height: 65px;
+  /* aspect-ratio: 4 / 3; */
+  /* object-fit: cover; */
 }
 
-.cards .cards-card-image a.button:any-link {
+.cards.white-bg .cards-light-theme .cards-card-image a.button:any-link {
   background: none;
   padding: 0;
   margin: 0;
 }
 
-.cards .cards-card-body a {
+.cards.white-bg .cards-light-theme .cards-card-body a {
   margin: 0;
   padding: 0;
   color: var(--text-color, #202020);
@@ -55,6 +80,105 @@
   font-family: var(--body-font-family, "Source Sans Pro", "Helvetica Neue", helvetica, arial, sans-serif);
 }
 
-.cards > ul > li .cards-card-image picture {
+.cards.white-bg .cards-light-theme li .cards-card-image picture {
   display: block;
+}
+
+
+/* black-bg css */
+.section.cards-container:has(.black-bg) {
+  background-color: black;
+}
+
+.section.cards-container:has(.black-bg) h3{
+  color: white;
+  padding: 75px 0 22px 70px;
+}
+
+.cards.black-bg {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.cards.black-bg .cards-dark-theme {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 0; /* 🔧 Fix */
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.cards.black-bg .cards-dark-theme li {
+  background-color: var(--text-color);
+  border: 1px solid green;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 342px;
+  height: 243px;
+}
+
+.cards.black-bg .cards-dark-theme li:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* stronger shadow on hover */
+}
+
+.cards.black-bg .cards-dark-theme .cards-card-body {
+  margin: 16px 16px 16px 0;
+}
+
+.cards.black-bg .cards-dark-theme .cards-card-body h5 {
+  color: var(--light-color);
+  font-size: 26px;
+}
+
+.cards.black-bg .cards-dark-theme .cards-card-body .card-paragraph{
+  color: dimgray;
+  display: block;
+  font-size: var(--font-size-small, 14px);
+  margin-top: 5px;
+  /* overflow: hidden; */
+  width: 260px;
+}
+
+.cards.black-bg .cards-dark-theme .cards-card-body p {
+  margin-left: 0;
+  color: var(--light-color);
+}
+
+.cards.black-bg .cards-dark-theme .cards-card-image {
+  line-height: 0;
+}
+
+.cards.black-bg .cards-dark-theme li img {
+  width: 191px;
+  height: 65px;
+  /* aspect-ratio: 4 / 3; */
+  /* object-fit: cover; */
+}
+
+.cards.black-bg .cards-dark-theme .cards-card-image a.button:any-link {
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cards.black-bg .cards-dark-theme .cards-card-body a {
+  margin: 0;
+  padding: 0;
+  color: var(--text-color, #202020);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  background-color: transparent;
+  font-size: var(--body-font-size-m);
+  font-family: var(--body-font-family, "Source Sans Pro", "Helvetica Neue", helvetica, arial, sans-serif);
+}
+
+.cards.black-bg .cards-dark-theme li .cards-card-image picture {
+  display: block;
+  width: 34px;
+  height: 34px
 }

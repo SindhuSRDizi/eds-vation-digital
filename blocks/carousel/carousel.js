@@ -7,6 +7,18 @@ function updateActiveSlide(slide) {
 
   const slides = block.querySelectorAll('.carousel-slide');
 
+  // Select the carousel content container
+  const content = document.querySelector('.carousel-slide-content');
+  // Add class to <h2>
+  const heading = content.querySelector('h2');
+  heading.classList.add('carousal-heading');
+
+  // Add class to both <p> tags
+  const paragraphs = content.querySelectorAll('p');
+  paragraphs.forEach((p, index) => {
+    p.classList.add('carousal-paragraph'+ index);
+  });
+
   slides.forEach((aSlide, idx) => {
     aSlide.setAttribute('aria-hidden', idx !== slideIndex);
     aSlide.querySelectorAll('a').forEach((link) => {
