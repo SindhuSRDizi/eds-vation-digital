@@ -1,20 +1,27 @@
+/* Footer container */
 footer {
   background-color: var(--background-color-black);
   font-size: var(--body-font-size-xs);
   color: var(--txt-color);
 }
 
-footer .footer > div {
+/* Footer wrapper */
+footer .footer>div {
   margin: auto;
   max-width: 1200px;
-  padding: 40px 24px 24px;
+  padding: 40px 32px 24px;
 }
 
+/* Footer paragraph */
 footer .footer p {
-  margin: 0 0 10px;
-  font-size: var(--body-font-size-s);
+  margin: 0 0 8px;
+  text-align: center;
+  line-height: 1.5rem;
+  font-size: 18px;
+  margin-top: 90px;
 }
 
+/* Paragraph links */
 footer .footer p a {
   font-size: var(--body-font-size-s);
   color: var(--light-color, #ebebeb);
@@ -22,51 +29,64 @@ footer .footer p a {
   text-decoration: underline;
 }
 
+/* Footer logo */
 footer .footer .footer-logo-img {
-  width: 128px;
+  width: 198px;
   height: auto;
 }
 
+/* Navigation section */
 footer .footer .section.footer-nav-sections {
   display: flex;
-  align-content: center;
+  justify-content: flex-start;
+  gap: 60px;
   margin-bottom: 35px;
 }
 
+/* Navigation list */
 footer .footer .section.footer-nav-sections ul {
   margin: 0;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   list-style: none;
+  padding: 0;
 }
 
-footer .footer .section.footer-nav-sections ul > li {
-  margin: 10px 0;
+/* Navigation items */
+footer .footer .section.footer-nav-sections ul>li {
+  margin: 0;
   font-size: var(--nav-font-size-s);
 }
 
-/* Link styling */
-footer .footer .section.footer-nav-sections ul > li > a {
-  text-decoration: none;  /* Removes the underline from links */
-  color: var(--light-color);  /* Sets the text color of the links */
-  padding: 15px 17px;
+/* Footer links */
+footer .footer .section.footer-nav-sections ul>li>a {
+  text-decoration: none;
+  color: var(--light-color);
+  padding: 15px 48px;
+  font-size: 20px;
+  font-family: var(--body-font-family);
+  transition: color 0.3s ease;
+  white-space: pre-line;
+  /* This enables breaking terms into two lines */
 }
 
-/* Hover effect for links */
-footer .footer .section.footer-nav-sections ul > li > a:hover {
-  color: #fff;  /* Changes text color on hover */
-  text-decoration: underline;
-
+/* Active link (e.g. Careers) */
+footer .footer .section.footer-nav-sections ul>li>a.active {
+  color: #a100ff;
+  /* Purple color */
+  font-weight: bold;
+  text-decoration: none;
 }
 
-/* Active or selected state styling */
-footer .footer .section.footer-nav-sections ul > li > a.active {
-  background-color: #007bff;  /* Active link background color */
-  color: #fff;  /* Active link text color */
+/* Hover effect */
+footer .footer .section.footer-nav-sections ul>li>a:hover {
+  color: #a100ff;
+  background-color: transparent;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
+/* Responsive padding */
+@media (width >=900px) {
+  footer .footer>div {
     padding: 40px 32px 24px;
   }
 }

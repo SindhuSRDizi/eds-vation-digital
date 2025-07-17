@@ -280,6 +280,13 @@ main img {
   width: 100%;
 }
 
+.section.nav-tools span.icon-search {
+  width: 100%;
+  background: #ececec;
+  float: left;
+}
+
+
 /* sections */
 main>.section {
   margin: 40px 0;
@@ -333,4 +340,29 @@ main .section.highlight {
 
 .icon-instagram-link::before {
   content: "\e903";
+}
+nav {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* static page - terms */
+main .section.terms-condition {
+  text-align: center;
+  margin-top: 40px;
+  padding-bottom: 20px;
+  padding-top: 40px;
+}
+
+main .section.terms-condition h2::after {
+  border: none;
+}
+
+.section.terms-condition-text {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding-top: 10px;
 }
