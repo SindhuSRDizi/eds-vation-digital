@@ -1,7 +1,14 @@
+/* .section:has(.discover-more-banner) {
+    background-color: black;
+} */
 
 .discover-more-banner > div {
     position: relative;
     display: inline-block;
+}
+
+.discover-more-banner > div > div >p {
+    margin:0;
 }
 
 .discover-more-banner picture img {
