@@ -1,16 +1,22 @@
-.columns h2 {
+.columns.black-column-bg {
+  color: #fff;
+  background-color: black;
+  padding: 40px 0;
+}
+
+.columns.black-column-bg h2 {
   margin-bottom: 13.5px;
   margin-top: 27px;
   margin-left: 0;
 }
 
-.columns p {
+.columns.black-column-bg p {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
   margin-left: 0;
 }
 
-.columns > div {
+.columns.black-column-bg > div {
   display: flex;
   flex-direction: column;
   max-width: 1200px;
@@ -18,30 +24,88 @@
   padding: 0 24px;
 }
 
-.columns img {
+.columns.black-column-bg img {
   /* width: 100%;   Need to fix this through specific css, for time being I am commenting this*/
 }
 
-.columns > div > div {
+.columns.black-column-bg > div > div {
   order: 1;
 }
 
-.columns > div > .columns-img-col {
+.columns.black-column-bg > div > .columns-img-col {
   order: 0;
 }
 
-.columns > div > .columns-img-col img {
+.columns.black-column-bg > div > .columns-img-col img {
   display: block;
 }
 
 @media (width >= 900px) {
-  .columns > div {
+  .columns.black-column-bg > div {
     align-items: center;
     flex-direction: unset;
     gap: 24px;
   }
 
-  .columns > div > div {
+  .columns.black-column-bg > div > div {
+    flex: 1;
+    order: unset;
+  }
+
+}
+
+
+/* white background columns css */
+
+.columns.white-column-bg {
+  color: #000;
+  background-color: #fff;
+}
+
+.columns.white-column-bg h2 {
+  margin-bottom: 13.5px;
+  margin-top: 27px;
+  margin-left: 0;
+}
+
+.columns.white-column-bg p {
+  margin-top: 0.8em;
+  margin-bottom: 0.25em;
+  margin-left: 0;
+}
+
+.columns.white-column-bg > div {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+.columns.white-column-bg img {
+  /* width: 100%;   Need to fix this through specific css, for time being I am commenting this*/
+}
+
+.columns.white-column-bg > div > div {
+  order: 1;
+}
+
+.columns.white-column-bg > div > .columns-img-col {
+  order: 0;
+}
+
+.columns.white-column-bg > div > .columns-img-col img {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .columns.white-column-bg > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: 24px;
+  }
+
+  .columns.white-column-bg > div > div {
     flex: 1;
     order: unset;
   }
