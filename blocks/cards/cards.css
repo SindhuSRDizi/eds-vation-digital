@@ -193,3 +193,26 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+
+/* css for only images in card */
+
+.cards.white-bg-images .cards-light-theme {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 0; /* 🔧 Fix */
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.cards.white-bg-images .cards-light-theme li {
+  background-color: var(--background-color);
+  border-color: #363636;
+  /* flex: 0 0 32%;; */
+  padding: 20px;
+  text-align: center;
+  width: 345px;
+  height: 243px;
+}
