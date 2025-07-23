@@ -62,11 +62,12 @@ footer .footer .section.footer-nav-sections ul>li {
 footer .footer .section.footer-nav-sections ul>li>a {
   text-decoration: none;
   color: var(--light-color);
-  padding: 15px 48px;
+  /* padding: 15px 48px; */
   font-size: 20px;
   font-family: var(--body-font-family);
   transition: color 0.3s ease;
   white-space: pre-line;
+  margin: 60px;
   /* This enables breaking terms into two lines */
 }
 

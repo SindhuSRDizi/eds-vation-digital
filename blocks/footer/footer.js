@@ -30,7 +30,7 @@ export default async function decorate(block) {
     const brandLogoLink = document.createElement('a');
     brandImage.src = '../../img/vation-logo.svg';
     brandImage.alt = 'Brand Logo';
-    brandLogoLink.href = '/us/en';
+    brandLogoLink.href = 'https://vation.com/';
     footerNav.prepend(brandImage);
     brandLogoLink.appendChild(brandImage);
     brandImage.classList.add('footer-logo-img');

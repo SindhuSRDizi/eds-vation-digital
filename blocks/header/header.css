@@ -149,7 +149,7 @@ header .nav-brand {
   font-weight: 700;
   line-height: 0;
   width: 25%;
-  margin-left: 40px;
+  /* margin-left: 40px; */
   margin-right: 20px;
 }
 
@@ -199,11 +199,12 @@ header nav .nav-sections ul>li>ul>li {
 }
 
 .section.nav-tools {
-  width: 15%;
+  /* width: 15%; */
   float: right;
   display: flex;
   justify-content: flex-end;
   padding-right: 30px;
+  padding-bottom: 30px;
 }
 
 @media (width >=900px) {
@@ -214,7 +215,7 @@ header nav .nav-sections ul>li>ul>li {
   }
 
   header nav[aria-expanded='true'] .nav-sections {
-    align-self: unset;
+    /* align-self: unset; */
     width: 45%;
   }
 
