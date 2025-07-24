@@ -85,9 +85,19 @@ footer .footer .section.footer-nav-sections ul>li>a:hover {
   background-color: transparent;
 }
 
+span.icon.icon-linkedin-logo {
+  height: 50px;
+  width: 50px;
+}
+
 /* Responsive padding */
 @media (width >=900px) {
   footer .footer>div {
     padding: 40px 32px 24px;
   }
+}
+
+span.icon.icon-linkedin-logo {
+  height: 40px;
+  width: 50px;
 }

@@ -2,6 +2,7 @@
   color: #fff;
   background-color: black;
   padding: 40px 0;
+  --text-color: white;
 }
 
 .columns.black-column-bg h2 {
@@ -16,7 +17,7 @@
   margin-left: 0;
 }
 
-.columns.black-column-bg > div {
+.columns.black-column-bg>div {
   display: flex;
   flex-direction: column;
   max-width: 1200px;
@@ -28,26 +29,26 @@
   /* width: 100%;   Need to fix this through specific css, for time being I am commenting this*/
 }
 
-.columns.black-column-bg > div > div {
+.columns.black-column-bg>div>div {
   order: 1;
 }
 
-.columns.black-column-bg > div > .columns-img-col {
+.columns.black-column-bg>div>.columns-img-col {
   order: 0;
 }
 
-.columns.black-column-bg > div > .columns-img-col img {
+.columns.black-column-bg>div>.columns-img-col img {
   display: block;
 }
 
-@media (width >= 900px) {
-  .columns.black-column-bg > div {
-    align-items: center;
+@media (width >=900px) {
+  .columns.black-column-bg>div {
+    /* align-items: center; */
     flex-direction: unset;
     gap: 24px;
   }
 
-  .columns.black-column-bg > div > div {
+  .columns.black-column-bg>div>div {
     flex: 1;
     order: unset;
   }
@@ -74,7 +75,7 @@
   margin-left: 0;
 }
 
-.columns.white-column-bg > div {
+.columns.white-column-bg>div {
   display: flex;
   flex-direction: column;
   max-width: 1200px;
@@ -86,26 +87,26 @@
   /* width: 100%;   Need to fix this through specific css, for time being I am commenting this*/
 }
 
-.columns.white-column-bg > div > div {
+.columns.white-column-bg>div>div {
   order: 1;
 }
 
-.columns.white-column-bg > div > .columns-img-col {
+.columns.white-column-bg>div>.columns-img-col {
   order: 0;
 }
 
-.columns.white-column-bg > div > .columns-img-col img {
+.columns.white-column-bg>div>.columns-img-col img {
   display: block;
 }
 
-@media (width >= 900px) {
-  .columns.white-column-bg > div {
-    align-items: center;
+@media (width >=900px) {
+  .columns.white-column-bg>div {
+    /* align-items: center; */
     flex-direction: unset;
     gap: 24px;
   }
 
-  .columns.white-column-bg > div > div {
+  .columns.white-column-bg>div>div {
     flex: 1;
     order: unset;
   }
