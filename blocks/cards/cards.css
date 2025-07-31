@@ -225,3 +225,98 @@
   height: 243px;
   align-content: center;
 }
+
+.cards.partners-white-bg .cards-light-theme {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.cards.partners-white-bg .cards-light-theme {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 75px 0;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.cards.partners-white-bg .cards-light-theme li {
+  display: flex;
+  align-items: center; /* Vertically center */
+  gap: 20px; /* Space between image and text */
+  padding: 20px;
+  text-align: left;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 550px;
+  height: 150px;
+}
+
+.cards.partners-white-bg .cards-light-theme li:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* stronger shadow on hover */
+}
+
+.cards.partners-white-bg .cards-light-theme .cards-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+}
+
+.cards.partners-white-bg .cards-light-theme .cards-card-body h5 {
+  color: #0e1012;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.cards.partners-white-bg .cards-light-theme .cards-card-body .card-paragraph{
+  font-size: 16px;
+  margin-top: 8px;
+  color: #333;
+  width: 100%;
+  line-height: 1.4;
+  text-align: left;
+  text-transform: none;
+}
+
+.cards.partners-white-bg .cards-light-theme .cards-card-body p {
+  margin-left: 0;
+  margin-bottom: 20px;
+}
+
+.cards.partners-white-bg .cards-light-theme .cards-card-image {
+  flex-shrink: 0;
+  width: 165px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards.partners-white-bg .cards-light-theme li img {
+  width: 191px;
+  height: 65px;
+}
+
+.cards.partners-white-bg .cards-light-theme .cards-card-image a.button:any-link {
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cards.partners-white-bg .cards-light-theme .cards-card-body a {
+  margin: 0;
+  padding: 0;
+  color: var(--text-color, #202020);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  background-color: transparent;
+  font-size: var(--body-font-size-m);
+  font-family: var(--body-font-family, "Source Sans Pro", "Helvetica Neue", helvetica, arial, sans-serif);
+}
+
+.cards.partners-white-bg .cards-light-theme li .cards-card-image picture {
+  display: block;
+}
