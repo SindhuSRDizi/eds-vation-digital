@@ -25,9 +25,11 @@ export default async function decorate(block) {
   });
 
   // Optimize all images
-  ul.querySelectorAll('picture > img').forEach((img) =>
-    img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]))
-  );
+  ul.querySelectorAll('picture > img').forEach((img) => {
+    img.closest('picture').replaceWith(
+      createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }],)
+    );
+  });
 
   // Add classes to <a> tags based on their title attribute
   ul.querySelectorAll('p > a').forEach((aTag) => {
