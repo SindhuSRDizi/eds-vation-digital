@@ -1,0 +1,114 @@
+.insight-list > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 24px;
+  overflow-x: auto;
+  flex-direction: column;
+  width: 100%;
+}
+
+.insight-list > ul > li {
+ flex: 0 0 auto; /* Prevent shrinking and allow items to size naturally */
+ padding: 16px;
+ color: #fff; /* default text color for contrast on dark bg */
+ width: 100%;
+ padding: 75px 45px;
+}
+/* Odd items: white background + dark text */
+.insight-list > ul > li:nth-child(odd) {
+ background-color: #ffffff;
+ color: #000000;
+}
+
+/* Even items: black background + white text */
+.insight-list > ul > li:nth-child(even) {
+ background-color: #000000;
+ color: #ffffff;
+}
+.insight-list .insight-card-body {
+ /* margin: 16px 16px 16px 0; */
+ text-align: center;
+}
+
+.insight-list .insight-card-body .card-paragraph{
+ color: dimgray;
+ display: block;
+ font-size: var(--font-size-small, 14px);
+ margin-top: 5px;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ text-transform: uppercase;
+ white-space: nowrap;
+ width: 260px;
+}
+
+.insight-list .insight-card-image {
+ line-height: 0;
+ text-align: center;
+ width: 70%;
+}
+
+.insight-list > ul > li img {
+ height: auto;
+ object-fit: cover;
+ width: 100%;
+}
+
+.insight-list .insight-card-image a.button:any-link, .insight-list .insight-card-body a.button:any-link {
+ background: none;
+}
+
+.insight-list > ul > li .insight-card-image picture {
+ display: block;
+}
+
+.insight-list .insight-card-body h3 {
+font-family: var(--font-family-serif, "Asar", Georgia, "Times New Roman", Times, serif);
+font-weight: normal;
+margin-bottom: .25em;
+margin-top: 0;
+}
+
+.insight-list .insight-card-body h5 {
+margin-bottom: .25em;
+margin-top: 0;
+}
+
+.insight-list .insight-card-body a {
+margin: 0;
+padding: 0;
+color: var(--light-color);
+text-decoration: none;
+transition: color 0.3s ease;
+text-transform: uppercase;
+font-family: Wkndicons, sans-serif !important;
+width: 48px;
+height: 48px;
+background-color: var(--text-color);
+display: inline-block;
+overflow: hidden;
+}
+
+.insight-list .insight-card-body a:hover {
+color: var(--light-color);
+text-decoration: underline;
+}
+
+.insight-list .insight-card-body a .icon {
+width: 48px;
+height: 48px;
+padding: 10px 0;
+}
+
+.insight-list .insight-card-body a .icon::before {
+font-size: 18px;
+}
+
+.insight-list .insight-card-body a .icon-facebook-link img,
+.insight-list .insight-card-body a .icon-twitter-link img,
+.insight-list .insight-card-body a .icon-calender img {
+display: none;
+}

@@ -338,8 +338,8 @@ main .section.highlight {
   content: "\e901";
 }
 
-.icon-instagram-link::before {
-  content: "\e903";
+.icon-calender::before {
+  content: "\e912";
 }
 
 nav {
