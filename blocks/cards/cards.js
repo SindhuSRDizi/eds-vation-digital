@@ -5,7 +5,6 @@ export default function decorate(block) {
 
   // Detect if this section uses black background theme
   const isDark = block?.classList.contains('black-bg');
-  console.log(isDark);
 
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
@@ -23,9 +22,11 @@ export default function decorate(block) {
   });
 
   // Optimize images
-  ul.querySelectorAll('picture > img').forEach((img) =>
-    img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]))
-  );
+  ul.querySelectorAll('picture > img').forEach((img) => {
+    img.closest('picture').replaceWith(
+      createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]),
+    );
+  });
 
   // Wrap images with link
   ul.querySelectorAll('.cards-card-body .button-container a').forEach((a, index) => {
