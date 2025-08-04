@@ -254,7 +254,7 @@ function searchBox(block, config) {
   box.classList.add('search-box');
   box.append(
     searchIcon(),
-    // searchInput(block, config),
+    searchInput(block, config),
   );
 
   return box;

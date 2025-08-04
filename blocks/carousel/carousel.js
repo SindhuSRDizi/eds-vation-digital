@@ -16,7 +16,7 @@ function updateActiveSlide(slide) {
   // Add class to both <p> tags
   const paragraphs = content.querySelectorAll('p');
   paragraphs.forEach((p, index) => {
-    p.classList.add('carousal-paragraph'+ index);
+    p.classList.add('carousal-paragraph' + index);
   });
 
   slides.forEach((aSlide, idx) => {
