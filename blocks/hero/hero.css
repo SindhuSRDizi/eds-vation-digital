@@ -31,7 +31,7 @@
 }
 
 /* Overlay container */
-.hero.block > div:last-child {
+.hero.block>div:last-child {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -61,7 +61,7 @@
   justify-content: flex-start;
 }
 
-.hero.partners-hero > div:last-child {
+.hero.partners-hero>div:last-child {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -85,7 +85,48 @@
   margin-top: 0;
 }
 
-@media (width >= 900px) {
+.hero.work-hero.block {
+  min-height: 420px;
+  padding-top: 48px;
+  line-height: 6px;
+  font-weight: bold;
+  color: #921ce8;
+  font-size: 24px;
+}
+
+.hero.custom-hero.block {
+  font-weight: bold;
+  --text-color: white;
+  background-color: #921ce8;
+  text-align: center;
+  font-size: 24px;
+  min-height: 250px;
+}
+
+.hero.custom-hero.block h2 {
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+  padding: 40px;
+  margin: 40px;
+}
+
+.hero.custom-hero.block p {
+  background-color: black;
+  box-sizing: border-box;
+  display: inline-block;
+  border-radius: 2.4em;
+  padding: 16px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  line-height: 3px;
+  color: white;
+}
+
+@media (width >=900px) {
   .hero {
     padding: 40px 32px;
   }

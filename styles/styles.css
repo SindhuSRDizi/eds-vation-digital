@@ -282,7 +282,7 @@ main img {
 
 .section.nav-tools span.icon-search {
   width: 100%;
-  background: #ececec;
+  /* background: #ececec; */
   float: left;
 }
 
