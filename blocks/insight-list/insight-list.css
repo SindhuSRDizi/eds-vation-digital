@@ -11,104 +11,159 @@
 }
 
 .insight-list > ul > li {
- flex: 0 0 auto; /* Prevent shrinking and allow items to size naturally */
- padding: 16px;
- color: #fff; /* default text color for contrast on dark bg */
- width: 100%;
- padding: 75px 45px;
+  flex: 0 0 auto; /* Prevent shrinking and allow items to size naturally */
+  padding: 16px;
+  color: #fff; /* default text color for contrast on dark bg */
+  width: 100%;
+  padding: 75px 45px;
 }
 /* Odd items: white background + dark text */
 .insight-list > ul > li:nth-child(odd) {
- background-color: #ffffff;
- color: #000000;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 /* Even items: black background + white text */
 .insight-list > ul > li:nth-child(even) {
- background-color: #000000;
- color: #ffffff;
+  background-color: #000000;
+  color: #ffffff;
 }
 .insight-list .insight-card-body {
  /* margin: 16px 16px 16px 0; */
- text-align: center;
+  text-align: justify;
+}
+.insight-list .insight-card-body p {
+  margin-left: 0;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 1rem;
 }
 
 .insight-list .insight-card-body .card-paragraph{
- color: dimgray;
- display: block;
- font-size: var(--font-size-small, 14px);
- margin-top: 5px;
- overflow: hidden;
- text-overflow: ellipsis;
- text-transform: uppercase;
- white-space: nowrap;
- width: 260px;
+  color: dimgray;
+  display: block;
+  font-size: var(--font-size-small, 14px);
+  margin-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 260px;
+}
+
+.insight-card-wrapper {
+  width: 70%;
+  border: solid 1px #000;
+  border-radius: 15px;
+  padding: 27px;
 }
 
 .insight-list .insight-card-image {
- line-height: 0;
- text-align: center;
- width: 70%;
+  line-height: 0;
+  text-align: center;
+  width: 100%;
 }
-
+.insight-list .insight-card-image p {
+  margin: 0;
+}
 .insight-list > ul > li img {
- height: auto;
- object-fit: cover;
- width: 100%;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
 }
 
 .insight-list .insight-card-image a.button:any-link, .insight-list .insight-card-body a.button:any-link {
- background: none;
+  background: none;
 }
 
 .insight-list > ul > li .insight-card-image picture {
- display: block;
+  display: block;
+  margin: 0 auto;
+  width: 80%;
 }
 
 .insight-list .insight-card-body h3 {
-font-family: var(--font-family-serif, "Asar", Georgia, "Times New Roman", Times, serif);
-font-weight: normal;
-margin-bottom: .25em;
-margin-top: 0;
+  font-family: var(--font-family-serif, "Asar", Georgia, "Times New Roman", Times, serif);
+  font-weight: normal;
+  margin-bottom: .25em;
+  margin-top: 0;
+  font-size: 12px;
+  color: #808080;
 }
 
 .insight-list .insight-card-body h5 {
-margin-bottom: .25em;
-margin-top: 0;
+  margin-bottom: .25em;
+  margin-top: 0;
 }
 
 .insight-list .insight-card-body a {
-margin: 0;
-padding: 0;
-color: var(--light-color);
-text-decoration: none;
-transition: color 0.3s ease;
-text-transform: uppercase;
-font-family: Wkndicons, sans-serif !important;
-width: 48px;
-height: 48px;
-background-color: var(--text-color);
-display: inline-block;
-overflow: hidden;
+  margin: 0;
+  padding: 0;
+  color: var(--light-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  font-family: Wkndicons, sans-serif !important;
+  width: auto;
+  height: auto;
+  /* background-color: var(--text-color); */
+  display: inline-block;overflow: hidden;
 }
 
 .insight-list .insight-card-body a:hover {
-color: var(--light-color);
-text-decoration: underline;
+  color: var(--light-color);
+  text-decoration: underline;
+}
+
+.insight-list .insight-card-body p.button-container a.button {
+  background-color: #921ce8;
+  color: #fff;
+  border: none !important;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 2.8;
+  padding: 0 1.8em;
+  border-radius: 1.4em;
+  letter-spacing: 0px;
+  cursor: pointer;
+  transition: background-color .3s, box-shadow .3s, opacity .3s, color .3s;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: "aria", sans-serif !important;
+  text-transform: capitalize;
+}
+
+.insight-list .insight-card-body p.button-container a.button:hover {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .insight-list .insight-card-body a .icon {
-width: 48px;
-height: 48px;
-padding: 10px 0;
+  width: 20px;
+  height: 15px;
+  padding: 0;
+  position: relative;
 }
 
 .insight-list .insight-card-body a .icon::before {
-font-size: 18px;
+  font-size: 13px;
+  line-height: 1;
+  position: absolute;
+  top: 8px;
+  left: 2px;
+  color: #808080;
 }
 
 .insight-list .insight-card-body a .icon-facebook-link img,
 .insight-list .insight-card-body a .icon-twitter-link img,
 .insight-list .insight-card-body a .icon-calender img {
-display: none;
+  display: none;
+}
+
+
+.insight-list > ul > li:nth-child(even) .insight-card-wrapper {
+  border-color: #ffffff;
+}
+
+.insight-list > ul > li:nth-child(even) .insight-card-image h3 {
+  color: #ffffff;
 }

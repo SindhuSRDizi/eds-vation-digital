@@ -12,7 +12,7 @@ export default async function decorate(block) {
 
     while (row.firstElementChild) {
       const child = row.firstElementChild;
-      if (child.children.length === 1 && child.querySelector('picture')) {
+      if (child.children.length === 1 || child.querySelector('picture')) {
         child.className = 'insight-card-image';
       } else {
         child.className = 'insight-card-body';
