@@ -8,7 +8,8 @@
   display: flex;
   justify-content: flex-start;
   gap: 20px;
-  padding: 0; /* 🔧 Fix */
+  padding: 0;
+  /* 🔧 Fix */
   flex-wrap: wrap;
   margin: 0 auto;
 }
@@ -26,7 +27,8 @@
 }
 
 .cards.white-bg .cards-light-theme li:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* stronger shadow on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  /* stronger shadow on hover */
 }
 
 .cards.white-bg .cards-light-theme .cards-card-body {
@@ -38,7 +40,7 @@
   font-size: 26px;
 }
 
-.cards.white-bg .cards-light-theme .cards-card-body .card-paragraph{
+.cards.white-bg .cards-light-theme .cards-card-body .card-paragraph {
   color: dimgray;
   display: block;
   font-size: var(--font-size-small, 14px);
@@ -90,7 +92,7 @@
   background-color: black;
 }
 
-.section.cards-container:has(.black-bg) h3{
+.section.cards-container:has(.black-bg) h3 {
   color: white;
   padding: 75px 0 22px 70px;
 }
@@ -105,7 +107,8 @@
   display: flex;
   justify-content: flex-start;
   gap: 20px;
-  padding: 0; /* 🔧 Fix */
+  padding: 0;
+  /* 🔧 Fix */
   flex-wrap: wrap;
   margin: 0 auto;
 }
@@ -122,7 +125,8 @@
 }
 
 .cards.black-bg .cards-dark-theme li:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* stronger shadow on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  /* stronger shadow on hover */
 }
 
 .cards.black-bg .cards-dark-theme .cards-card-body {
@@ -134,7 +138,7 @@
   font-size: 26px;
 }
 
-.cards.black-bg .cards-dark-theme .cards-card-body .card-paragraph{
+.cards.black-bg .cards-dark-theme .cards-card-body .card-paragraph {
   color: dimgray;
   display: block;
   font-size: var(--font-size-small, 14px);
@@ -197,6 +201,7 @@
 .section.custom-card.cards-container p.button-container {
   text-align: center;
 }
+
 /* css for only images in card */
 
 .section.custom-image-card.cards-container h2 {
@@ -243,8 +248,10 @@
 
 .cards.partners-white-bg .cards-light-theme li {
   display: flex;
-  align-items: center; /* Vertically center */
-  gap: 20px; /* Space between image and text */
+  align-items: center;
+  /* Vertically center */
+  gap: 20px;
+  /* Space between image and text */
   padding: 20px;
   text-align: left;
   border-radius: 8px;
@@ -254,7 +261,8 @@
 }
 
 .cards.partners-white-bg .cards-light-theme li:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); /* stronger shadow on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  /* stronger shadow on hover */
 }
 
 .cards.partners-white-bg .cards-light-theme .cards-card-body {
@@ -271,7 +279,7 @@
   margin: 0;
 }
 
-.cards.partners-white-bg .cards-light-theme .cards-card-body .card-paragraph{
+.cards.partners-white-bg .cards-light-theme .cards-card-body .card-paragraph {
   font-size: 16px;
   margin-top: 8px;
   color: #333;
@@ -319,4 +327,67 @@
 
 .cards.partners-white-bg .cards-light-theme li .cards-card-image picture {
   display: block;
+}
+
+.cards.location-section.block {
+  padding: 40px;
+  background: #f2f2f2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  font-family: 'Arial', sans-serif;
+}
+
+.cards.location-section.block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+
+.cards.location-section.block li {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  height: 320px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.cards.location-section.block li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cards.location-section.block .cards-card-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.cards.text-section.block {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  background-color: #000;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.cards.text-section.block li {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-left: 8px solid #8000ff;
+  max-width: 500px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

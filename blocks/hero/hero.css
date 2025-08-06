@@ -85,6 +85,12 @@
   margin-top: 0;
 }
 
+.hero.custom-hero.block p a {
+  color: white;
+  text-decoration: none;
+}
+
+
 .hero.work-hero.block {
   min-height: 420px;
   padding-top: 48px;
@@ -114,6 +120,7 @@
 .hero.custom-hero.block p {
   background-color: black;
   box-sizing: border-box;
+  color: white;
   display: inline-block;
   border-radius: 2.4em;
   padding: 16px;
