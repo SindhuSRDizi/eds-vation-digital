@@ -5,6 +5,9 @@
 .discover-more-banner > div {
     position: relative;
     display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
 }
 
 .discover-more-banner > div > div >p {
